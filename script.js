@@ -51,13 +51,13 @@ renderTeam(teamMembers)
 formEl.addEventListener('submit', function (e) {
   e.preventDefault()
   console.dir(e.target);
-   const name = nameFieldEl.value
-    const role = roleFieldEl.value
-    const email= emailFieldEl.value
+  const name = nameFieldEl.value
+  const role = roleFieldEl.value
+  const email= emailFieldEl.value
   const image = imageFieldEl.value
-   const newMember = {
+  const newMember = {
     name, 
-     role,
+    role,
     email,
     image,
   }
@@ -79,9 +79,9 @@ function renderTeam(team){
   for (let i = 0; i < teamMembers.length; i++) {
     // - get the element for the current iteration
     const member = teamMembers[i];
-    const { name, role, email, image } = member
+    const { name, role, email, img } = member
 
-    const cardMarkupString = genateCardMarkup(name, role, email, image)
+    const cardMarkupString = genateCardMarkup(name, role, email, img)
 
    /*  console.log(cardMarkupString); */
 
@@ -96,10 +96,10 @@ function renderTeam(team){
 function genateCardMarkup(name, role, email, image) {
   return `
    
-  <div class="card mb-3">
+  <div class="card mb-3 p-4 mx-3" style=" width:330px";>
     <div class="row g-0">
       <div class="col-md-4">
-        <img src="${image}" class="img-fluid rounded-start" alt="Descrizione immagine">
+        <img src="${image}" class="img-fluid h-100 rounded-start object-fit-cover" alt="">
       </div>
       <div class="col-md-8">
       <div class="card-body">
